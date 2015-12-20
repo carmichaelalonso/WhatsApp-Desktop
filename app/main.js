@@ -24,7 +24,6 @@
         init: function() {
 
             whatsApp.createMenu();
-
             whatsApp.clearCache();
             whatsApp.openWindow();
 
@@ -42,7 +41,7 @@
         openWindow: function() {
             whatsApp.window = new BrowserWindow(
                 {
-                    'width': 1000,
+                    'width': 1280,
                     'height': 720,
                     'title': '',
                     'node-integration': false
