@@ -3,7 +3,6 @@
 
     var app = require('app');
     var appMenu = require('menu');
-    var AppTray = require('tray');
     var fileSystem = require('fs');
     var BrowserWindow = require('browser-window');
 
@@ -25,7 +24,6 @@
         init: function() {
 
             whatsApp.createMenu();
-            whatsApp.createTray();
 
             whatsApp.clearCache();
             whatsApp.openWindow();
@@ -35,15 +33,6 @@
             whatsApp.menu =
                 appMenu.buildFromTemplate(require('./menu'));
                 appMenu.setApplicationMenu(whatsApp.menu);
-        },
-        createTray: function() {
-            whatsApp.tray = new AppTray(__dirname + '/assets/img/trayTemplate.png');
-
-            whatsApp.tray.on('clicked', function() {
-                whatsApp.window.show();
-            });
-
-            whatsApp.tray.setToolTip('WhatsApp Desktop');
         },
         clearCache: function() {
             try{
