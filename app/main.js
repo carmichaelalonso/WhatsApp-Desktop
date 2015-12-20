@@ -69,9 +69,6 @@
                     count = count ? count[1] : '';
 
                 app.dock.setBadge(count);
-                if (parseInt(count) > 0) {
-                    app.dock.bounce('informational');
-                }
             }));
 
             whatsApp.window.webContents.on("new-window", function(e, url){
